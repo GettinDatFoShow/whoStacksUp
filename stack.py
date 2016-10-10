@@ -1,6 +1,7 @@
-__author__ = 'Robert Morris'
+__author__ = 'Janelle Boyd'
 
 import time
+import random
 
 class Stack:
 
@@ -22,15 +23,18 @@ class Stack:
         return self.items.pop()
 
     def peek(self):
-
         return self.items[len(self.items)-1]
 
     def size(self):
         return len(self.items)
 
+    def createStack(self, stackSize, minRange, maxRange):
+        for i in range(stackSize):
+            self.push(random.randint(minRange, maxRange))
+        return self.items
+
     def __str__(self):
         return str(self.items)
 
-
-
-# if __name__ == '__main__':
+    def __len__(self):
+        return len(self.items)
